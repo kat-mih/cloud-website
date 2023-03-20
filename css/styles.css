@@ -208,7 +208,7 @@ a {
     font-weight: 600;
     margin: 1rem 0;
     outline: 0;
-    padding: 2rem 3rem;
+    padding: 2rem 4vw;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
@@ -297,6 +297,7 @@ a {
     border: 0;
     flex-grow: 1;
     padding: 1.5rem 2rem;
+    width: 0;
 }
 
 .input-group .btn {
@@ -373,10 +374,6 @@ a {
     margin-bottom: 2rem;
 }
 
-.plan--popular {
-    transform: scale(1.1);
-}
-
 .plan--popular .card__header {
     position: relative;
 }
@@ -394,8 +391,14 @@ a {
     transform: scale(1.05);
 }
 
-.plan--popular:hover {
-    transform: scale(1.15);
+@media screen and (min-width: 768px) {
+    .plan--popular {
+        transform: scale(1.1);
+    }
+
+    .plan--popular:hover {
+        transform: scale(1.15);
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -505,21 +508,34 @@ a {
     padding: 3rem;
 }
 
+.testimonial .quote {
+    font-size: 110%;
+    margin: 2rem 0;
+  }
+
 .testimonial__image {
+    margin: 0 3rem;
     position: relative;
 }
 
 .testimonial__image>img {
-    width: 100%;
+    width: 100%
 }
 
-.testimonial__image .icon-container {
+.testimonial__image>.icon-container {
+    height: 48px;
     position: absolute;
-    right: -32px;
+    right: -24px;
     top: 3rem;
-}
+    width: 48px;
+  }
 
 @media screen and (min-width: 768px) {
+    .testimonial__image>.icon-container {
+        height: 64px;
+        right: -32px;
+        width: 64px;
+    }
 
     .testimonial .quote,
     .testimonial .quote__author {
@@ -606,7 +622,7 @@ a {
 
 /* Blocks */
 .block {
-    --padding-vertical: 6rem;
+    --padding-vertical: 3rem;
     padding: var(--padding-vertical) 2rem;
 }
 
@@ -631,7 +647,7 @@ a {
 }
 
 .block--skewed-right {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
     padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
 
@@ -690,6 +706,11 @@ a {
     transform: translateY(5px);
 }
 
+.nav__logo>img {
+    max-width: 18rem;
+    width: 100%;
+}
+
 @media screen and (min-width: 768px) {
     .nav__toggler {
         display: none
@@ -740,10 +761,11 @@ a {
 }
 
 .block-domain__prices {
+    color: var(--color-headings);
     display: grid;
     font-size: 2rem;
     font-weight: 600;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 6rem);
     justify-items: center;
     margin: 0 auto;
@@ -758,7 +780,7 @@ a {
 
 /* Plans Block */
 .block-plans .grid {
-    gap: 8rem 4rem;
+    gap: 6rem 4rem;
 }
 
 .block-plans .card {
@@ -769,11 +791,7 @@ a {
 /* Features */
 .feature {
     gap: 4rem 2rem;
-    margin: 12rem 0;
-}
-
-.feature:first-of-type {
-    margin-top: 6rem;
+    margin-top: 9rem;
 }
 
 .feature__heading {
